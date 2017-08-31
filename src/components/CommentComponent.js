@@ -10,22 +10,22 @@ export default {
     render(data){
 
         const className = 'CommentComponent'
-        const template = `<ul>
-            <li>Hello</li>
-        </ul>`
-        //console.log(data);
-        //let parentUl = document.createElement('ul')
-        //data.children.map(({id, text, children}) => {
-        //    let parentLi = document.createElement('li')
-        //    parentLi.innerHTML = text;
-        //    parentUl.appendChild(parentLi);
-        //});
-        //const template = parentUl;
+        //const template = `<ul>
+        //    <li>Hello</li>
+        //</ul>`
+        console.log(data);
+        let parentUl = document.createElement('ul')
+        data.children.map(({id, text, children}) => {
+            let parentLi = document.createElement('li')
+            parentLi.innerHTML = text;
+            parentUl.appendChild(parentLi);
+        });
+        const template = parentUl;
         
         const el = document.createElement('div');
         el.className = styles[className];
-        //el.appendChild(template);
-        el.innerHTML = template;
+        el.appendChild(template);
+        //el.innerHTML = template;
         return el;
 
         //let parentUl = document.createElement('ul')

@@ -1,6 +1,7 @@
 export default {
     Model(
       data = {
+        id: 0,
         url: '',
         content: '',
         title: "",
@@ -13,6 +14,7 @@ export default {
       getData() {
         return {
            article: {
+              id: this.data.id,
               url: this.data.url,
               title: this.data.title,
               content: this.data.content

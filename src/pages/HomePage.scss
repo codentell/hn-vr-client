@@ -92,6 +92,18 @@
         padding: 10px;
         text-align: center;
     }
+    &-hn-article-loading{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        font-family: Hack, monospace;
+        bottom: auto;
+        right: auto;
+        margin-top: -45px;
+        margin-left: -35px;
+        padding: 10px;
+        text-align: center;
+    }
     &-hn-more__container{
         display:block;
     }
@@ -104,6 +116,18 @@
         cursor: pointer;
     }
 
+    &-hn-article-circle{
+        border-color: rgb(255,240,230) rgb(255,240,230) #ff6600;
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        font-family: Hack, monospace;
+        -webkit-animation: spinoffPulse 900ms infinite linear;
+        animation: spinoffPulse 900ms infinite linear;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 50%;
+    }
     &-hn-circle{
         border-color: rgb(255,240,230) rgb(255,240,230) #ff6600;
         display: inline-block;

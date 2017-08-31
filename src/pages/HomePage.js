@@ -42,7 +42,7 @@ export default {
                 </div>
                 <div class="${styles[this.className + '-hn-content']}" >
                     <div class="${styles[this.className + '-hn-header']}"></div>
-                    <section>
+                    <section style="background:#FF900D; max-height:300px;">
                     <a-scene>
 
                     <a-entity>
@@ -105,6 +105,11 @@ export default {
                      </a-entity>
                        </a-scene>
                     </section>
+                    <div class="${styles[this.className + '-hn-article-loading']}">
+                        <div class="${styles[this.className + '-hn-article-circle']}"></div>
+                        <br>
+                        Sorry Loading HN VR...
+                    </div> 
                 </div>
             </div>`
         },
@@ -114,7 +119,7 @@ export default {
                 const stories = document.querySelector('.' + styles[this.className + '-hn-stories__list'])
                 models.slice(this.more, this.more+30).map((model, index) => {
                     const itemView = ItemView.Create(model.getData());
-                    const itemViewEl = itemView.render(index+this.more+1)
+                    const itemViewEl = itemView.renderStory(index+this.more+1)
                     this.append(stories,itemViewEl)
                 })
                 this.more += 30
@@ -134,13 +139,26 @@ export default {
 
         renderArticles(models, title){
             if(models.length > 0 ){
+                this.loadingArticle();
                 const articles = document.querySelector('.' + styles[this.className + '-hn-content'])
                 const itemView = ItemView.Create(models[0].getData());
                 const itemViewEl = itemView.renderArticle();
                 this.append(articles,itemViewEl)
                 this.renderTitle(title.article.title)
-                
+                this.unloadingArticle();
             }
+        },
+
+        loadingArticle(){
+            setTimeout(() => {
+                document.querySelector('.' + styles[this.className + '-hn-article-loading']).style.display = 'block'
+            }, 1000);
+        },
+
+        unloadingArticle(){
+            setTimeout(() => {
+                document.querySelector('.' + styles[this.className + '-hn-article-loading']).style.display = 'none'
+            }, 1000);
         },
 
         loadingStory(){
@@ -165,48 +183,15 @@ export default {
         renderComments(models){
 
             if(models.length > 0 ){
+                this.loadingArticle();
                 const comment = document.querySelector('.' + styles[this.className + '-hn-content'])
                 const itemView = ItemView.Create(models[0].getData());
                 const itemViewEl = itemView.renderComment();
                 this.append(comment,itemViewEl)
                 this.renderTitle(models[0].getData().author);
+                this.unloadingArticle()
+
             }
-            /*const comments = document.querySelector('.' + styles[this.className + '-hn-content'])
-            console.log(models);
-            const comments = document.querySelector('.comments')
-            const itemView = ItemView.Create(models[0].getData());
-            const itemViewEl = itemView.renderComment();
-            //console.log(itemViewEl);
-           
-            setTimeout(function () {
-                const template = `<div>World</div>`
-                const el = document.createElement('div');
-                el.innerHTML = template;
-                comments.appendChild(el);
-            }, 1000);
-
-            */
-            //this.append(comments,itemViewEl)
-            
-             
-            
-                
-           
-                
-                
-                  
-                    //console.log(model.getData().comment);
-                    //const itemView = ItemView.Create(model.getData());
-                    //const itemViewEl = itemView.renderComment();
-                    //this.append(comments, '<div>Hello</div>')
-                
-               
-              
-               
-                    
-                    //this.append(comments,itemViewEl)
-
-            //}
         },
 
         
@@ -223,11 +208,13 @@ export default {
             const stories = document.querySelector('.' + styles[this.className + '-hn-stories__list'])
             models.slice(0, 30).map((model, index) => {
                 this.loadingStory()
+                this.loadingArticle()
                 const itemView = ItemView.Create(model.getData());
                 const itemViewEl = itemView.renderStory(index+1)
                 this.append(stories,itemViewEl)
                
             })
+            this.unloadingArticle()
             this.unloadingStory()
             this.loadMore(models)
 

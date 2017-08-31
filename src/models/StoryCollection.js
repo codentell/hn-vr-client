@@ -99,7 +99,7 @@ export default {
                 return response.json();
             })
             .then((response) => {
-                this.populate(response);
+                this.populateModel(response);
                 return this.models;
             })
             .catch((err) => {
@@ -115,6 +115,9 @@ export default {
         populateComment(data){
             this.comment = []
             this.comment.push(PropertyCommentModel.Model(data));
+        },
+        populateModel(data){
+            this.models.push(PropertyStoryModel.Model(data));
         }
 
      

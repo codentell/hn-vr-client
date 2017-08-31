@@ -1,5 +1,5 @@
-# Build a Hacker News Client
 
+# Build a Hacker News Client 
 We expect you to spend 1 to 2 hours writing a single page app using only **Vanilla** JavaScript. We are including Babel in this project, so es6 is ok. Please do not add any new dependencies.
 
 Hacker News looks like: [https://news.ycombinator.com/](https://news.ycombinator.com/)
@@ -15,14 +15,14 @@ https://nodejs.org/en/
 Open your terminal and:
 
 ```
-cd hn-client
+cd hn-vr-client
 npm install
 npm start
 ```
 
 The files you add or edit are in the `src` directory.
-
 Then open your browser to [http://localhost:3000](http://localhost:3000)
+
 
 Notes:
 
@@ -37,7 +37,6 @@ General:
 7) Use the browser history API to link to internal pages
 
 Landing Page:
-
 1) The landing page should display a list of current top stories
 2) Each list item should display the link to the story, comments
 3) When you click the title of the story, it should link and direct you to the story page

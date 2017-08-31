@@ -10,6 +10,27 @@ export default {
     },
 
     methods: {
+        Article(){
+            let route = route || location.hash.slice(1) || "/#";
+            let id = route.substring(route.lastIndexOf('/')+1)
+            StoryCollection.Create().getArticle(id).then((article) => {
+                let url = article[article.length - 1].getData().article.url;
+                let title = article[article.length - 1].getData()
+                StoryCollection.Create().getArticleContent(url).then((content) => {
+                    this.showArticlePage(content, title);
+                });
+            })
+        },
+        Comments(){
+            let route = route || location.hash.slice(1) || "/#";
+            let id = route.substring(route.lastIndexOf('/')+1)
+            StoryCollection.Create().getComment(id).then((comment) => {
+            let title = comment[comment.length - 1].getData()
+                StoryCollection.Create().getCommentContent(id).then((content) => {
+                        this.showCommentPage(content);
+                })
+            })
+        },
         init() {
            
             let route = route || location.hash.slice(1) || "/#";
@@ -17,39 +38,28 @@ export default {
             StoryCollection.Create().getAllTopStories().then((models) => {
                 models.map((id,index) => {
                 StoryCollection.Create().search(id).then((story) => {
-                    this.showHomePage(story);
+                        this.showHomePage(story);
                     })       
                 })
                 if(route.substring(Number.isInteger(route.lastIndexOf('/')+1))){
                     if(route.indexOf('article') > 0){
-                        let id = route.substring(route.lastIndexOf('/')+1)
-                        StoryCollection.Create().getArticle(id).then((article) => {
-                        
-                            let url = article[article.length - 1].getData().article.url;
-                            let title = article[article.length - 1].getData()
-                            StoryCollection.Create().getArticleContent(url).then((content) => {
-                                this.showArticlePage(content, title);
-                            });
-                        })
+                        this.Article();
                     }
+                }
+                if(route.substring(Number.isInteger(route.lastIndexOf('/')+1))){
                     if(route.indexOf('comments') > 0){
-                        let id = route.substring(route.lastIndexOf('/')+1)
-
-                        StoryCollection.Create().getComment(id).then((comment) => {
-                            let title = comment[comment.length - 1].getData()
-                            StoryCollection.Create().getCommentContent(id).then((content) => {
-                                this.showCommentPage(content);
-                            })
-                        })
-
+                       this.Comments();
+                       location.reload();
+    
                         /*StoryCollection.Create().getCommentContent(id).then((content) => {
                             this.showCommentPage(content);
                         })*/
                     }
                     
                  }
-                
             })
+
+           
 
            
             //this.showArticlePage();

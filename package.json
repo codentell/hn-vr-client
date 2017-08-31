@@ -1,12 +1,12 @@
 {
   "name": "hn-client",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "bundle.js",
   "scripts": {
     "build": "webpack -p --optimize-minimize",
-    "start": "node webpack.dev.server"
+    "start": "node webpack.dev.server",
+    "heroku-postbuild": "npm run build"
   },
-  "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
@@ -23,7 +23,7 @@
     "webpack-dev-server": "^2.5.0"
   },
   "description": "We expect you to spend 1 to 2 hours writing a single page app using only **Vanilla** JavaScript. We are including Babel in this project, so es6 is ok. Please do not add any new dependencies.",
-  "author": "",
+  "author": "codentell",
   "license": "ISC",
   "repository": {
     "type": "git",
