@@ -1,0 +1,22 @@
+.ArticleComponent{
+        padding:10px 15px;
+        font-family: Hack, monospace;
+        img {
+            max-width: 100%;
+            display: block;
+            margin: 0 auto;
+            padding: 4px;
+        }
+        h1, h2, h3, h4, h5, h6{
+            color: #ff6600;
+            
+        }
+
+        a{
+            color: #ff6600;
+            text-decoration: none;
+        }
+        ul{
+            list-style: none;
+        }
+}
