@@ -1,3 +1,12 @@
+# Welcome to HN Client VR
+This is a very fun project to do:
+
+
+View it now:
+[https://codentell.github.io/hn-vr-client/]
+(https://codentell.github.io/hn-vr-client/)
+
+
 
 # Build a Hacker News Client 
 We expect you to spend 1 to 2 hours writing a single page app using only **Vanilla** JavaScript. We are including Babel in this project, so es6 is ok. Please do not add any new dependencies.
