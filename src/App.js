@@ -49,7 +49,7 @@ export default {
                 if(route.substring(Number.isInteger(route.lastIndexOf('/')+1))){
                     if(route.indexOf('comments') > 0){
                        this.Comments();
-                       location.reload();
+                       //location.reload();
     
                         /*StoryCollection.Create().getCommentContent(id).then((content) => {
                             this.showCommentPage(content);
