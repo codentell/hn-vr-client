@@ -2,9 +2,8 @@
 This is a very fun project to do:
 
 
-View it now:
-[https://codentell.github.io/hn-vr-client/]
-(https://codentell.github.io/hn-vr-client/)
+View it now: [https://codentell.github.io/hn-vr-client/](https://codentell.github.io/hn-vr-client/)
+
 
 
 
