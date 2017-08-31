@@ -1,7 +1,7 @@
 {
   "name": "hn-client",
   "version": "1.0.0",
-  "main": "bundle.js",
+  "main": "webpack.dev.server",
   "scripts": {
     "build": "webpack -p --optimize-minimize",
     "start": "node webpack.dev.server",
