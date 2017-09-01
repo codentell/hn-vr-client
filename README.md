@@ -1,4 +1,6 @@
-# Welcome to HN Client VR
+# Welcome to HN Client VR by Andrew Hoang
+![picture](https://s3.amazonaws.com/hacker-news/assets/me.gif)
+
 This is a very fun project to do:
 
 Hacker VR News built it using:
