@@ -1,5 +1,5 @@
 # Welcome to HN Client VR by Andrew Hoang
-![picture](https://s3.amazonaws.com/hacker-news/assets/me.gif = 450x)
+![picture](https://s3.amazonaws.com/hacker-news/assets/me.gif){:height="500px"}
 
 This is a very fun project to do:
 
