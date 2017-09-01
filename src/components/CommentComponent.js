@@ -2,44 +2,33 @@
 import styles from './CommentComponent.scss';
 export default {
     
+    content: [],
+    renderParent(id, text){
+        let parentLi = document.createElement('li')
+        parentLi.innerHTML = text;
+        return parentLi;
+    },
 
-    renderParent(data){
-
+    renderChildren(id, text){
+        let childLi = document.createElement('li')
+        childLi.innerHTML = text;
+        return childLi;
     },
 
     render(data){
-
+        //location.reload();
         const className = 'CommentComponent'
-        //const template = `<ul>
-        //    <li>Hello</li>
-        //</ul>`
-        console.log(data);
+       
+       
         let parentUl = document.createElement('ul')
         data.children.map(({id, text, children}) => {
-            let parentLi = document.createElement('li')
-            parentLi.innerHTML = text;
+            let parentLi = this.renderParent(id, text)
             parentUl.appendChild(parentLi);
-        });
-        const template = parentUl;
-        
-        const el = document.createElement('div');
-        el.className = styles[className];
-        el.appendChild(template);
-        //el.innerHTML = template;
-        return el;
-
-        //let parentUl = document.createElement('ul')
-        /*data.children.map(({id, text, children}) => {
-           
-
-            let parentLi = document.createElement('li')
-            parentLi.innerHTML = text;
-            parentUl.appendChild(parentLi);
+            
             children.map(({id, text, children}) => {
                 let childUl = document.createElement('ul');
                 childUl.id = id;
-                let childLi = document.createElement('li')
-                childLi.innerHTML = text;
+                let childLi = this.renderChildren(id, text)
                 childUl.appendChild(childLi)
                 parentLi.appendChild(childUl);
                 children.map(({id, text, children}) => {
@@ -51,28 +40,20 @@ export default {
                     childLi.appendChild(grandChildUl);
                 });
             })
-        })
-        console.log(parentUl)
-        */
-
+        });
         
-        
-        
-        /*const template = `<div>
-            <div>${data.by}</div>
-            <div>${data.id}</div>
-            <div>${data.parent}</div>
-            <div>${data.time}</div>
-            <div>${data.text}</div>
-        </div>*/
-    
-
-      
-      
-        //const el = document.createElement('ul');
-        //el.className = styles[className];
-        //el.innerHTML = template;
-        //return el;
+        this.content.push(parentUl);
+        console.log(this.content[0]);
+        if(this.content != undefined){
+            
+                const template = parentUl;
+                const el = document.createElement('div');
+                el.className = styles[className];
+                el.innerHTML = '<ul>' + this.content[0].innerHTML + '</ul>';
+                console.log(el.innerHTML);
+                return el;
+            
+        }
     }
 
 }

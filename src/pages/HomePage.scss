@@ -1,160 +1,166 @@
-/**/
 
 
 .HomePage {
-    width:100%;
-    height:100%;
-    &-hn-container{
-        display:flex;
-    }
-    &-hn-stories{
-        flex:1;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 5px 25px 25px 0px rgba(46,61,73,0.2);
-        
-        
-    }
+  width: 100%;
+  height: 100%;
+  &-hn-container {
+    display: flex;
+  }
+  &-hn-stories {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 5px 25px 25px 0px rgba(46, 61, 73, 0.2);
+  }
 
-    &-hn-navbar{
-        background: rgb(255, 102, 0);
-        min-height: 45px;
-    }
+  &-hn-navbar {
+    background: rgb(255, 102, 0);
+    min-height: 45px;
+  }
 
-    &-hn-header{
-        background: rgb(255, 102, 0);
-        min-height: 45px;
-    }
+  &-hn-header {
+    background: rgb(255, 102, 0);
+    min-height: 45px;
+  }
 
-    &-hn-content{
-        flex:2;
-        position: relative;
-        height: 100%; 
-        overflow: auto;
-        font-family: Hack, monospace;
-        
-        
-        
-    }
+  &-hn-content {
+    flex: 2;
+    position: relative;
+    height: 100%;
+    overflow: auto;
+    font-family: Hack, monospace;
+  }
 
-    &-hn-stories__list{
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        height: 88%;
-        max-width:480px; 
-        overflow: auto;
-        font-family: Hack, monospace;
-       
-        
-        
-        li {
-            height:105px;
-            width:100%;
-            font-family: Hack, monospace;
-            display: flex;
-            flex-direction: row;
-            border-bottom: 1px solid lightgrey;
-            border-top: 1px solid lightgrey;
-            border-left:3px solid transparent;
-            
-        }
+  &-hn-stories__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 88%;
+    max-width: 480px;
+    overflow: auto;
+    font-family: Hack, monospace;
 
-        li:nth-child(31n){
-            border-top: 2px solid #ff6600;
-        }
-
-       
-
+    li {
+      height: 105px;
+      width: 100%;
+      font-family: Hack, monospace;
+      display: flex;
+      flex-direction: row;
+      border-bottom: 1px solid lightgrey;
+      border-top: 1px solid lightgrey;
+      border-left: 3px solid transparent;
     }
 
-    @keyframes spinoffPulse {
-        0% {
-            transform: rotate(0deg) scale(1);
-        }
-        50% {
-            transform: rotate(180deg) scale(0.6);
-        }
-        100% {
-            transform: rotate(360deg) scale(1);
-        }
+    li:nth-child(31n) {
+      border-top: 2px solid #ff6600;
     }
+  }
 
-    &-hn-loading{
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        font-family: Hack, monospace;
-        bottom: auto;
-        right: auto;
-        margin-top: -45px;
-        margin-left: -35px;
-        padding: 10px;
-        text-align: center;
+  @keyframes spinoffPulse {
+    0% {
+      transform: rotate(0deg) scale(1);
     }
-    &-hn-article-loading{
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        font-family: Hack, monospace;
-        bottom: auto;
-        right: auto;
-        margin-top: -45px;
-        margin-left: -35px;
-        padding: 10px;
-        text-align: center;
+    50% {
+      transform: rotate(180deg) scale(0.6);
     }
-    &-hn-more__container{
-        display:block;
+    100% {
+      transform: rotate(360deg) scale(1);
     }
-    &-hn-load-more{
-        padding: 10px 0;
-        text-align: center;
-        font-family: Hack, monospace;
-        font-weight: 400;
-        background: rgba(0,0,0,.1);
-        cursor: pointer;
-    }
+  }
 
-    &-hn-article-circle{
-        border-color: rgb(255,240,230) rgb(255,240,230) #ff6600;
-        display: inline-block;
-        width: 1.5rem;
-        height: 1.5rem;
-        font-family: Hack, monospace;
-        -webkit-animation: spinoffPulse 900ms infinite linear;
-        animation: spinoffPulse 900ms infinite linear;
-        border-width: 1px;
-        border-style: solid;
-        border-radius: 50%;
+  &-hn-loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-family: Hack, monospace;
+    bottom: auto;
+    right: auto;
+    margin-top: -45px;
+    margin-left: -35px;
+    padding: 10px;
+    text-align: center;
+  }
+  &-hn-article-loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-family: Hack, monospace;
+    bottom: auto;
+    right: auto;
+    margin-top: -45px;
+    margin-left: -35px;
+    padding: 10px;
+    text-align: center;
+  }
+  &-hn-more__container {
+    display: block;
+  }
+  &-hn-load-more {
+    padding: 10px 0;
+    text-align: center;
+    font-family: Hack, monospace;
+    font-weight: 400;
+    background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+
+  &-hn-github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+  @keyframes octocat-wave {
+    0%,
+    100% {
+      transform: rotate(0);
     }
-    &-hn-circle{
-        border-color: rgb(255,240,230) rgb(255,240,230) #ff6600;
-        display: inline-block;
-        width: 1.5rem;
-        height: 1.5rem;
-        font-family: Hack, monospace;
-        -webkit-animation: spinoffPulse 900ms infinite linear;
-        animation: spinoffPulse 900ms infinite linear;
-        border-width: 1px;
-        border-style: solid;
-        border-radius: 50%;
+    20%,
+    60% {
+      transform: rotate(-25deg);
     }
-
-    canvas{
-        height:100% !important;
-        width: 100% !important;
+    40%,
+    80% {
+      transform: rotate(10deg);
     }
-    
-    a-scene {
-        height:300px;
+  }
+  @media (max-width: 500px) {
+    &-hn-github-corner:hover .octo-arm {
+      animation: none;
     }
+    &-hn-github-corner .octo-arm {
+      animation: octocat-wave 560ms ease-in-out;
+    }
+  }
 
-     
-   
+  &-hn-article-circle {
+    border-color: rgb(255, 240, 230) rgb(255, 240, 230) #ff6600;
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-family: Hack, monospace;
+    -webkit-animation: spinoffPulse 900ms infinite linear;
+    animation: spinoffPulse 900ms infinite linear;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 50%;
+  }
+  &-hn-circle {
+    border-color: rgb(255, 240, 230) rgb(255, 240, 230) #ff6600;
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-family: Hack, monospace;
+    -webkit-animation: spinoffPulse 900ms infinite linear;
+    animation: spinoffPulse 900ms infinite linear;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 50%;
+  }
 
+  canvas {
+    height: 100% !important;
+    width: 100% !important;
+  }
 
-
-
+  a-scene {
+    height: 300px;
+  }
 }
-

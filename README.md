@@ -1,6 +1,17 @@
 # Welcome to HN Client VR
 This is a very fun project to do:
 
+Hacker VR News built it using:
+Javascript - single page app  
+A-frame - VR experience
+AWS S3 bucket - image assets
+
+![picture](https://s3.amazonaws.com/hacker-news/assets/sony.png)
+# Features That I added
+VR Experience because it was cool
+
+
+
 
 View it now: [https://codentell.github.io/hn-vr-client/](https://codentell.github.io/hn-vr-client/)
 
@@ -39,24 +50,25 @@ The Hacker News API is defined here [https://github.com/HackerNews/API](https://
 ### Spec:
 
 General:
-1) There should be a header with the hacker news icon
-2) The Hacker News icon should link back to the landing page
-4) This header should be displayed on all pages
-7) Use the browser history API to link to internal pages
+- [x] 1) There should be a header with the hacker news icon
+- [x] 2) The Hacker News icon should link back to the landing page
+- [x] 3) This header should be displayed on all pages
+- []  4) Use the browser history API to link to internal pages
 
 Landing Page:
-1) The landing page should display a list of current top stories
-2) Each list item should display the link to the story, comments
-3) When you click the title of the story, it should link and direct you to the story page
-4) When you click the comments link, it should link you to an in app page displaying all of the comments
-5) Have a button at the bottom of the landing page to load more stories
+- [x] 1) The landing page should display a list of current top stories
+- [x] 2) Each list item should display the link to the story, comments
+- [x] 3) When you click the title of the story, it should link and direct you to the story page
+- [x] 4) When you click the comments link, it should link you to an in app page displaying all of the comments
+- [x] 5) Have a button at the bottom of the landing page to load more stories
 
 Comments Page:
 
-1) A comments page should list all of the comments for a story
-2) Comments should be able to be collapsable - a parent comment can collapse it's children
-3) Each comment should display its body text
+- [] 1) A comments page should list all of the comments for a story
+- [] 2) Comments should be able to be collapsable - a parent comment can collapse it's children
+- [] 3) Each comment should display its body text
+
+
 
 Style points:
-
-Avoiding UI libraries (e.g. Bootstrap), use your creativity to make the layout pop! Bonus points for using Flexbox.
+- [x] Avoiding UI libraries (e.g. Bootstrap), use your creativity to make the layout pop! Bonus points for using Flexbox.
